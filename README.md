@@ -2,8 +2,9 @@
 
 ## 使用技術
 
-- ruby 3.0.0
-- rails 6.1.7
+- Ruby 3.0.0
+- Rails 6.1.7
+- Node 16
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
