@@ -1,4 +1,7 @@
 class ClubsController < ApplicationController
+    def home
+    end
+
     def about
     end
 
