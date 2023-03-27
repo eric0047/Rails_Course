@@ -1,3 +1,79 @@
-// Place all the styles related to the resumes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.field {
+  margin: 10px;
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    width: 100px;
+  }
+}
+.error-message {
+  color: #f00;
+  ul {
+    list-style: none;
+  }
+}
+.field_with_errors {
+  display: inline-block;
+  margin: 0px;
+  input {
+    border: 1px solid #f00;
+  }
+}
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  .resume-card {
+    background-color: #aaf;
+    margin-bottom: 20px;
+    padding: 10px;
+    .pic {
+      img {
+        width: 100%;
+        object-fit: contain;
+        vertical-align: top;
+      }
+    }
+    .info {
+      overflow: hidden;
+      .info-header {
+        display: flex;
+        justify-content: space-between;
+        span {
+          font-size: 18px;
+          padding: 5px;
+        }
+      }
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .action {
+        display: flex;
+        p {
+          margin: 4px 8px;
+          padding: 4px;
+          background-color: #008800ff;
+          text-decoration: none;
+          cursor: pointer;
+          &:hover {
+            background-color: #008800aa;
+          }
+        }
+        p:nth-child(3) {
+          background-color: #dd0000ff;
+          &:hover {
+            background-color: #dd0000aa;
+          }
+        }
+      }
+    }
+  }
+  
+  .btn {
+    text-decoration: none;
+  }
+  
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Jobbank</title>
+    <title>菜雞上工</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,9 +9,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'ruby-on-rails-512.webp' %>
+
   </head>
 
   <body>
+    <%= render 'shared/flash' %>    
+
     <%= render 'shared/navbar' %>    
 
     <main><%= yield %></main>

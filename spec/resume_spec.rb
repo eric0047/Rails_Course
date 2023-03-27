@@ -13,4 +13,19 @@ RSpec.describe Resume, type: :model do
     expect(columns).to include('experience')
     expect(columns).to include('portfolio')
   end
+
+  it 'validate name' do
+    expect(Resume.new(name: '', email: '123@gmail.com', tel: '0988777666')).not_to be_valid
+    expect(Resume.new(name: 'aaa', email: '123@gmail.com', tel: '0988777666')).to be_valid
+  end
+
+  it 'validate email' do
+    expect(Resume.new(name: 'aa', email: '', tel: '0988777666')).not_to be_valid
+    expect(Resume.new(name: 'aaa', email: '123@gmail.com', tel: '0988777666')).to be_valid
+  end
+
+  it 'validate tel' do
+    expect(Resume.new(name: '', email: '123@gmail.com', tel: '')).not_to be_valid
+    expect(Resume.new(name: 'aaa', email: '123@gmail.com', tel: '0988777666')).to be_valid
+  end
 end

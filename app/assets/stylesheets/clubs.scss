@@ -16,3 +16,17 @@ main {
           }
       }
   }
+
+  .flash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #080;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    button {
+      padding: 10px;
+      border-radius: 10px;
+    }
+  }

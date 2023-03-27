@@ -1,0 +1,34 @@
+<div class="container">
+      <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
+          <div class="col">
+            <div class="card">
+              <section class="resume-card">
+                <header>
+                  <div class="pic">
+                    <img src="https://picsum.photos/300/200/?random=10">
+                  </div>
+                </header>
+            
+                <article class="info">
+                  <div class="info-header">
+                    <h2><%= resume.name %></h2>
+                    <span><%= resume.city %></span>
+                  </div>
+                  <%= link_to resume.intro&.truncate(75), '#'%>
+                </article>
+            
+                <footer>
+                  <div class="update-time">
+                    <%= format_date(resume.updated_at) %>
+                  </div>
+                  <div class="action">
+                    <p><%= link_to '編輯', '#', class: 'btn' %></p>
+                    <p><%= link_to '建立副本', '#', class: 'btn' %></p>
+                    <p><%= link_to '刪除', '#', class: 'btn' %></p>
+                  </div>
+                </footer>
+              </section>
+            </div>
+          </div>
+      </div>
+  </div>
