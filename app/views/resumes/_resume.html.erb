@@ -4,9 +4,11 @@
             <div class="card">
               <section class="resume-card">
                 <header>
+                  <%= link_to resume_path(resume) do %>
                   <div class="pic">
                     <img src="https://picsum.photos/300/200/?random=10">
                   </div>
+                  <% end %>
                 </header>
             
                 <article class="info">
@@ -14,7 +16,7 @@
                     <h2><%= resume.name %></h2>
                     <span><%= resume.city %></span>
                   </div>
-                  <%= link_to resume.intro&.truncate(75), '#'%>
+                  <div class="intro truncate"><%= link_to resume.intro&.truncate(75), resume_path(resume) %></div>
                 </article>
             
                 <footer>
@@ -22,9 +24,9 @@
                     <%= format_date(resume.updated_at) %>
                   </div>
                   <div class="action">
-                    <p><%= link_to '編輯', '#', class: 'btn' %></p>
+                    <p><%= link_to '編輯', edit_resume_path(resume.id), class: 'btn' %></p>
                     <p><%= link_to '建立副本', '#', class: 'btn' %></p>
-                    <p><%= link_to '刪除', '#', class: 'btn' %></p>
+                    <p><%= link_to '刪除', resume_path(resume.id), method: 'delete', data: {confirm: 'sure?'},  class: 'btn' %></p>
                   </div>
                 </footer>
               </section>

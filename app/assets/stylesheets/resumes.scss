@@ -1,8 +1,13 @@
 .field {
   margin: 10px;
+  display: flex;
+    justify-content: flex-start;
+    align-items: center;
   label {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    align-items: center;
     text-align: center;
     width: 100px;
   }
@@ -20,60 +25,77 @@
     border: 1px solid #f00;
   }
 }
-.card {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  .resume-card {
-    background-color: #aaf;
-    margin-bottom: 20px;
-    padding: 10px;
-    .pic {
-      img {
-        width: 100%;
-        object-fit: contain;
-        vertical-align: top;
+.container {
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  // grid-gap: 10px;
+  .card {
+    display: flex;
+    // grid-template-columns: repeat(3, 1fr);
+    // grid-gap: 10px;
+    // flex-wrap: wrap;
+    margin-top: 20px;
+
+    .resume-card {
+      width: 50%;
+      background-color: #aaf;
+      margin-bottom: 20px;
+      padding: 10px;
+      
+      .pic {
+        img {
+          width: 100%;
+          object-fit: contain;
+          vertical-align: top;
+        }
       }
-    }
-    .info {
-      overflow: hidden;
-      .info-header {
+      .info {
+        overflow: hidden;
+        .info-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          span {
+            font-size: 18px;
+            padding: 5px;
+          }
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+          }
+  
+      }
+      footer {
         display: flex;
         justify-content: space-between;
-        span {
-          font-size: 18px;
-          padding: 5px;
-        }
-      }
-    }
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .action {
-        display: flex;
-        p {
-          margin: 4px 8px;
-          padding: 4px;
-          background-color: #008800ff;
-          text-decoration: none;
-          cursor: pointer;
-          &:hover {
-            background-color: #008800aa;
+        align-items: center;
+        .action {
+          display: flex;
+          p {
+            margin: 4px 8px;
+            padding: 4px;
+            background-color: #008800ff;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+              background-color: #008800aa;
+            }
           }
-        }
-        p:nth-child(3) {
-          background-color: #dd0000ff;
-          &:hover {
-            background-color: #dd0000aa;
+          p:nth-child(3) {
+            background-color: #dd0000ff;
+            &:hover {
+              background-color: #dd0000aa;
+            }
           }
         }
       }
     }
-  }
-  
-  .btn {
-    text-decoration: none;
+    
+    .btn {
+      text-decoration: none;
+    }
+    
   }
   
 }
