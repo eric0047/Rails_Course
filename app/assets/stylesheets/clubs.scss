@@ -21,12 +21,21 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #080;
-    color: #fff;
-    padding: 10px;
-    font-size: 20px;
+    padding: 10px 20px;
+  
     button {
-      padding: 10px;
       border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
     }
+  }
+  
+  .flash-alert {
+    color: white;
+    background-color: red;
+  }
+  
+  .flash-notice {
+    color: white;
+    background-color: green;
   }

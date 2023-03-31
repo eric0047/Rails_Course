@@ -1,0 +1,17 @@
+<h1>登入</h1>
+
+<%= form_with(model: @user, url: sessions_path) do |f| %>
+  <%# 要用url轉路徑到session_path，不然點完登入後會回到註冊頁面 %>
+  <div class="field">
+    <%= f.label :email, "Email 信箱" %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "密碼" %>
+    <%= f.password_field :password %>
+  </div>
+
+  <%= f.submit "登入" %>
+
+<% end %>

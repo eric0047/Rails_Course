@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  email      :string
+#  password   :string
+#  nickname   :string
+#  birthday   :date
+#  role       :integer          default(1)
+#  gender     :integer          default(0)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  email: MyString
+  password: MyString
+  nickname: MyString
+  birthday: 2023-03-30
+  role: 1
+  gender: 1
+
+two:
+  email: MyString
+  password: MyString
+  nickname: MyString
+  birthday: 2023-03-30
+  role: 1
+  gender: 1

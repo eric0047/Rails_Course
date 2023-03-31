@@ -8,10 +8,9 @@
 </form>
 
 <div class="resume-container">
-  <%= render partial: 'resume', collection: @resumes %>
+  <!-- <%=  @resumes %> -->
 
-  <!-- <% @resumes.each do |resume| %>
-    <%= render 'resume', resume: resume %>
-  <% end %> -->
+<%= render partial: "resume", collection: @resumes %>
+
 </div>
   
