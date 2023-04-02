@@ -12,6 +12,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+
 class User < ApplicationRecord
   validates :email, presence: true,
                     uniqueness: true,
@@ -20,10 +21,18 @@ class User < ApplicationRecord
   validates :password, presence: true, confirmation: true
   validates :birthday, presence: true
 
+  has_many :resumes
+  # s1.resumes = Resume(這是class_name).where(user_id:(這是foreign_key) s1.id)
+  enum role: {user: 1, company: 2, staff: 3}
+  # 如果是用 enum role: [:user, :company, :staff] key的值就是陣列的位置，key的位置改了直也會跟的變，不建議使用!
+  enum role: {"不公開": 0, "男生": 1, "女生": 2}
+  #上面的enum 是給 資料型態為integer的資料欄位使用
+
   before_create :encrypt_password
 
   class << self
     def gender_list
+      gender.map { |k, v| [k, k] }
       [["不公開", 0], ["男生", 1], ["女生", 2], ["其他", 3] ]
     end
   

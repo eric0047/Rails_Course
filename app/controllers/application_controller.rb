@@ -1,15 +1,30 @@
 class ApplicationController < ActionController::Base
+  include Pundit::Authorization
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   helper_method :user_signed_in?, :current_user
 
   private
+  def user_not_authorized(exception)
+    policy_name = exception.policy.class.to_s.underscore
+ 
+    flash[:error] = t "#{policy_name}.#{exception.query}", scope: "pundit", default: :default
+    redirect_back(fallback_url: root_path)
+  end
+  
   def user_signed_in?
     session[:_user_resume_dev_].present?
   end
 
   def current_user
-    return User.find_by(id: session[:_user_resume_dev_]) if user_signed_in?
+    if user_signed_in?
+      #
+      # @_user_ = @_user_ || User.find_by(id: session[:_user_resume_dev_]) 
+      # @_user_ 前後加底線是怕實體變數名字重複
+      # 實體變數沒有給值的時候，值就是nil，執行current_user的時候，判斷有沒有user_id =>記憶體快取
+      return @_user_ ||= User.find_by(id: session[:_user_resume_dev_]) 
+    end
 
     return nil
   end
